@@ -9,12 +9,12 @@ RUN apt-get update && apt-get install -y \
 # Run this to install gdal dependencies. Later gdal is being reinstalled from source
 RUN apt install -y libpq-dev gdal-bin libgdal-dev
 
-COPY ECWJP2SDKSetup_5.5.0.2268-Update4-Linux.zip ./ECWJP2SDKSetup_5.5.0.2268-Update4-Linux.zip
+COPY ECWJP2SDKSetup_5.5.0.2421-Update6-Linux.zip ./ECWJP2SDKSetup_5.5.0.2421-Update6-Linux.zip
 
 # Install the official ECW JP2 SDK (ECW 5.5 SDK)
-RUN unzip ECWJP2SDKSetup_5.5.0.2268-Update4-Linux.zip \
-    && chmod +x ECWJP2SDKSetup_5.5.0.2268.bin \
-    && ./ECWJP2SDKSetup_5.5.0.2268.bin --accept-eula=YES --install-type=1  \
+RUN unzip ECWJP2SDKSetup_5.5.0.2421-Update6-Linux.zip \
+    && chmod +x ECWJP2SDKSetup_5.5.0.2421.bin \
+    && ./ECWJP2SDKSetup_5.5.0.2421.bin --accept-eula=YES --install-type=1  \
     && cp -r ~/hexagon/ERDAS-ECW_JPEG_2000_SDK-5.5.0/Desktop_Read-Only /usr/local/hexagon \
     && rm -r /usr/local/hexagon/lib/x64 \
     && mv /usr/local/hexagon/lib/cpp11abi/x64 /usr/local/hexagon/lib/x64 \
